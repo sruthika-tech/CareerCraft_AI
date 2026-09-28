@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CareerCraft AI — a smart, browser-based AI-style resume builder and ATS checker.">
+<title>CareerCraft AI — Smart Resume Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="#"><span class="logo">C</span> CareerCraft <b>AI</b></a>
+  <div class="navlinks"><a href="#features">Features</a><a href="#builder">Builder</a><a href="#ats">ATS Check</a></div>
+  <a class="navbtn" href="#builder">Build Resume</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">SMARTER RESUMES. BETTER FIRST IMPRESSIONS.</p>
+    <h1>Turn your experience into a resume that <em>speaks for you.</em></h1>
+    <p class="lead">CareerCraft AI helps students and job seekers create clean, ATS-friendly resumes, generate professional wording, and check job compatibility — directly in the browser.</p>
+    <div class="hero-actions"><a class="btn primary" href="#builder">Create My Resume →</a><a class="text-btn" href="#features">Explore features</a></div>
+    <div class="trust"><span>✓ No sign-up</span><span>✓ Works offline</span><span>✓ GitHub Pages ready</span></div>
+  </div>
+  <div class="resume-card">
+    <div class="paper-top"><span>SRUTHIKA</span><small>SOFTWARE ENGINEER</small></div>
+    <div class="fake-line long"></div><div class="fake-line"></div>
+    <div class="mini-grid"><div><h5>EXPERIENCE</h5><i></i><i></i><i></i></div><div><h5>SKILLS</h5><div class="chips"><b>Python</b><b>Java</b><b>SQL</b><b>Git</b></div></div></div>
+    <div class="match"><strong>92</strong><span>ATS MATCH<br><small>Strong profile</small></span></div>
+  </div>
+</header>
+
+<section id="features" class="section">
+  <div class="section-head"><p class="eyebrow">WHAT IT DOES</p><h2>Everything you need to make your resume feel intentional.</h2></div>
+  <div class="features">
+    <article><span class="icon">✦</span><h3>Smart Content</h3><p>Turn rough notes into polished professional bullet points using built-in writing intelligence.</p></article>
+    <article><span class="icon">⌁</span><h3>ATS Checker</h3><p>Compare your resume with a job description and see matching and missing keywords instantly.</p></article>
+    <article><span class="icon">↗</span><h3>Job Matcher</h3><p>Get a compatibility score, skill gaps, and practical tailoring suggestions.</p></article>
+    <article><span class="icon">▣</span><h3>Print to PDF</h3><p>Create a clean, recruiter-friendly resume and save it as a PDF from your browser.</p></article>
+  </div>
+</section>
+
+<section id="builder" class="workspace">
+  <div class="section-head"><p class="eyebrow">RESUME BUILDER</p><h2>Build it once. Make it yours.</h2><p>Fill in what you know. Leave anything blank that doesn't apply.</p></div>
+  <div class="builder-grid">
+    <form id="resumeForm" class="panel">
+      <div class="panel-title"><span>01</span><div><h3>Your details</h3><p>Start with the essentials.</p></div></div>
+      <div class="fields two">
+        <label>Full name<input id="name" placeholder="e.g. Sruthika Ramavath"></label>
+        <label>Target role<input id="role" placeholder="e.g. Cybersecurity Intern"></label>
+        <label>Email<input id="email" type="email" placeholder="you@example.com"></label>
+        <label>Phone<input id="phone" placeholder="+91 98765 43210"></label>
+        <label>Location<input id="location" placeholder="Hyderabad, India"></label>
+        <label>LinkedIn / Portfolio<input id="link" placeholder="linkedin.com/in/yourname"></label>
+      </div>
+      <label>Professional summary<textarea id="summary" rows="4" placeholder="A concise 2–3 sentence introduction..."></textarea></label>
+      <div class="panel-title sub"><span>02</span><div><h3>Education & skills</h3><p>Show what you are learning and doing.</p></div></div>
+      <label>Education<textarea id="education" rows="3" placeholder="B.Tech CSE (Cyber Security) — JNTUH&#10;2025–2029"></textarea></label>
+      <label>Skills<textarea id="skills" rows="3" placeholder="Python, Java, SQL, HTML, CSS, JavaScript, Cybersecurity, Git"></textarea></label>
+      <div class="panel-title sub"><span>03</span><div><h3>Experience & projects</h3><p>Projects count — especially for students.</p></div></div>
+      <label>Experience<textarea id="experience" rows="4" placeholder="Intern / club / volunteer experience. Include measurable results where possible."></textarea></label>
+      <label>Projects<textarea id="projects" rows="5" placeholder="Project Name — what you built, how you built it, and the result.&#10;&#10;Another Project — key contribution and technology used."></textarea></label>
+      <div class="fields two">
+        <label>Certifications<textarea id="certifications" rows="3" placeholder="Certification — Issuer — Year"></textarea></label>
+        <label>Achievements<textarea id="achievements" rows="3" placeholder="Hackathon, award, leadership, publication..."></textarea></label>
+      </div>
+      <button class="btn primary full" type="submit">Generate My Resume ✦</button>
+      <button class="btn ghost full" type="button" id="demoBtn">Load Demo Profile</button>
+    </form>
+
+    <aside class="preview-panel">
+      <div class="preview-top"><span>LIVE PREVIEW</span><button id="printBtn">Print / PDF</button></div>
+      <div id="resumePreview" class="resume-preview">
+        <div class="empty-preview"><div>✦</div><h3>Your resume will appear here</h3><p>Fill in the form and click “Generate My Resume”.</p></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="ats" class="ats-section">
+  <div class="section-head"><p class="eyebrow">ATS + JOB MATCH</p><h2>Check how closely your resume fits a role.</h2><p>Paste a job description below. The checker runs locally in your browser.</p></div>
+  <div class="ats-grid">
+    <div class="panel">
+      <label>Job description<textarea id="jobText" rows="12" placeholder="Paste the job description here..."></textarea></label>
+      <button class="btn primary full" id="checkBtn">Analyze Match →</button>
+    </div>
+    <div class="result panel" id="result">
+      <div class="result-empty">Your ATS analysis will appear here.</div>
+    </div>
+  </div>
+</section>
+
+<footer><div><a class="brand" href="#"><span class="logo">C</span> CareerCraft <b>AI</b></a><p>Your career, clearly presented.</p></div><div><p>Built as a lightweight student-friendly career tool.</p><small>© 2026 CareerCraft AI</small></div></footer>
+<script src="script.js"></script>
+</body>
+</html>
